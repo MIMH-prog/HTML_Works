@@ -1,0 +1,204 @@
+/* 📱 GUÍA DE MEDIA QUERIES RESPONSIVE - TechHome */
+
+/* 
+==================================================================
+🎯 BREAKPOINTS PERSONALIZADOS PARA TECHHOME
+==================================================================
+
+Estos son los breakpoints que hemos implementado siguiendo 
+las mejores prácticas de diseño responsive:
+
+📱 Extra Small (xs): 0px - 575px (Teléfonos en vertical)
+📱 Small (sm): 576px - 767px (Teléfonos en horizontal)
+💻 Medium (md): 768px - 991px (Tablets)
+🖥️ Large (lg): 992px - 1199px (Laptops)
+🖥️ Extra Large (xl): 1200px - 1399px (Desktops)
+🖥️ Extra Extra Large (xxl): 1400px+ (Pantallas grandes)
+
+==================================================================
+*/
+
+/* 📱 MOBILE FIRST - DISEÑO BASE PARA MÓVILES */
+/* Estos estilos se aplican por defecto a todos los dispositivos */
+.responsive-card {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  font-size: 14px;
+}
+
+.responsive-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* Una columna por defecto */
+  gap: 1rem;
+}
+
+/* 📱 SMALL DEVICES - Teléfonos en horizontal */
+@media (min-width: 576px) {
+  .responsive-card {
+    padding: 1.25rem;
+    font-size: 15px;
+  }
+  
+  .responsive-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+  }
+  
+  /* NavBar ajustado para pantallas pequeñas */
+  .navbar-brand span {
+    font-size: 1.5rem !important;
+  }
+}
+
+/* 💻 MEDIUM DEVICES - Tablets */
+@media (min-width: 768px) {
+  .responsive-card {
+    padding: 1.5rem;
+    font-size: 16px;
+  }
+  
+  .responsive-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  /* Productos en 2 columnas para tablets */
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  /* Texto más grande para tablets */
+  .lead {
+    font-size: 1.1rem;
+  }
+}
+
+/* 🖥️ LARGE DEVICES - Laptops pequeños */
+@media (min-width: 992px) {
+  .responsive-card {
+    padding: 2rem;
+    font-size: 16px;
+  }
+  
+  .responsive-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+    gap: 2rem;
+  }
+  
+  /* Productos en 3 columnas para laptops */
+  .product-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  /* Hero section side by side */
+  .hero-section {
+    display: flex;
+    align-items: center;
+  }
+  
+  .hero-content {
+    flex: 1;
+  }
+  
+  .hero-image {
+    flex: 1;
+  }
+}
+
+/* 🖥️ EXTRA LARGE - Desktops */
+@media (min-width: 1200px) {
+  .responsive-card {
+    padding: 2.5rem;
+  }
+  
+  .responsive-grid {
+    grid-template-columns: repeat(4, 1fr); /* 4 columnas */
+    gap: 2.5rem;
+  }
+  
+  /* Productos en 4 columnas para desktops */
+  .product-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  /* Container más ancho para pantallas grandes */
+  .container {
+    max-width: 1140px;
+  }
+  
+  /* Imágenes más grandes */
+  .hero-image {
+    max-height: 500px;
+  }
+}
+
+/* 🖥️ EXTRA EXTRA LARGE - Pantallas muy grandes */
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
+  
+  /* Espaciado extra para pantallas muy grandes */
+  .py-responsive {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}
+
+/* 
+==================================================================
+🎨 EJEMPLOS PRÁCTICOS DE USO
+==================================================================
+*/
+
+/* Tipografía responsive usando clamp() */
+.responsive-title {
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  /* Mínimo: 1.5rem, Ideal: 4% del viewport, Máximo: 3rem */
+}
+
+/* Espaciado responsive */
+.responsive-spacing {
+  padding: clamp(1rem, 5vw, 4rem);
+  margin: clamp(0.5rem, 2vw, 2rem) 0;
+}
+
+/* Imágenes responsive */
+.responsive-image {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+/* Flexbox responsive */
+.responsive-flex {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .responsive-flex {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+/* 
+==================================================================
+📋 CHECKLIST DE RESPONSIVE DESIGN
+==================================================================
+
+✅ Usar Mobile-First approach
+✅ Implementar breakpoints lógicos
+✅ Optimizar imágenes para diferentes tamaños
+✅ Usar unidades relativas (rem, em, %, vw, vh)
+✅ Probar en dispositivos reales
+✅ Considerar touch targets (mínimo 44px)
+✅ Implementar navegación móvil
+✅ Optimizar rendimiento
+✅ Asegurar legibilidad en todos los tamaños
+✅ Implementar progressive enhancement
+
+==================================================================
+*/
